@@ -1,0 +1,35 @@
+#startPage {
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+}
+
+#startButton {
+    background-color: #9fe6a1;
+    padding: 25px 30px;
+    cursor: pointer;
+    border-radius: 16px;
+    border-color: #9fe6a1;
+    border: 2px solid #b9ffd9;
+    position: center;
+    margin-top: -20px;
+  }
+
+#startfont {
+    font-family: 'Press Start 2P';
+    color: white;
+    font-size: 30px;
+}
+
+#font {
+    font-family: 'Rubik Doodle Shadow', sans-serif;
+    font-size: 100px;
+    color: #527853;
+}
+
+body {
+    background-color: #e2f9c2;
+}
+
+/*Rubik Doodle Shadow, Press Start 2P */

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="/mainStyle.css">
+</head>
+<body>
+  <div id="startPage">
+    <p id="font">find santa</p>
+    <button id="startButton"><span id="startfont">start</span></button>
+  </div>
+
+  <div id="gamePage" style="display: none;">
+    <div id="app"></div>
+    <div>
+      <p>found santa: <span id="numSantaDisplay">0</span></p>
+    </div>
+  </div>
+
+  <div id="endingPage" style="display: none;">
+    <div>
+      <p>Finally, I met Santa!</p>
+      <p>give me my present</p>
+    </div>
+  </div>
+
+  <script type="module">
+    document.getElementById('startButton').addEventListener('click', () => {
+      // 버튼을 누르면 startPage를 숨기고 gamePage를 보여줌
+      document.getElementById('startPage').style.display = 'none';
+      document.getElementById('gamePage').style.display = 'block';
+
+      // main.js를 동적으로 로드하고 실행
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.src = '/main.js';
+      script.onload = () => {
+        // main.js가 로드된 후에 실행되는 부분
+        console.log('main.js가 로드되었습니다.');
+      };
+      document.body.appendChild(script);
+    });
+
+    const numSantaDisplay = document.getElementById('numSantaDisplay');
+    const endingPage = document.getElementById('endingPage');
+
+    function checkNumSanta() {
+      const numSantaValue = parseInt(numSantaDisplay.innerText, 10);
+
+      if (numSantaValue === 2) {
+        showEndingPage();
+      }
+    }
+
+    numSantaDisplay.addEventListener('DOMSubtreeModified', checkNumSanta);
+
+    function showEndingPage() {
+      //완료 페이지를 보여줌
+      document.getElementById('gamePage').style.display = 'none';
+      endingPage.style.display = 'block';
+
+    }
+  </script>
+</body>
+</html>
