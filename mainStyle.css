@@ -28,6 +28,12 @@
     color: #527853;
 }
 
+#santafont {
+    font-family: 'Rubik Doodle Shadow', sans-serif;
+    font-size: 80px;
+    color: #e00000;
+}
+
 body {
     background-color: #e2f9c2;
 }

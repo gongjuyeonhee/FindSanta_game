@@ -3,10 +3,7 @@ const ONUMENTS_BASE = [
     name: "00_hand",
     radius: 60 / 2,
   },
-  {
-    name: "10_santa",
-    radius: 210 / 2,
-  },
+  
   {
     name: "01_bell",
     radius: 57 / 2,
@@ -43,8 +40,10 @@ const ONUMENTS_BASE = [
     name: "09_bag",
     radius:  160/ 2,
   },
-  
-
+  {
+    name: "10_santa",
+    radius: 210 / 2,
+  },
 ];
 
 export { ONUMENTS_BASE };
